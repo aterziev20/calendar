@@ -16,9 +16,9 @@ function EventList({ selectedDate, getEventsForDay }) {
           </h2>
           <ul className="event-list">
             {getEventsForDay(
-              parseInt(selectedDate.substr(0, 4)),
-              parseInt(selectedDate.substr(5, 2)),
-              parseInt(selectedDate.substr(8, 2))
+              parseInt(selectedDate.substr(0, 4)), // 4 digit year
+              parseInt(selectedDate.substr(5, 2)), // 2 digit month
+              parseInt(selectedDate.substr(8, 2))  // 2 digit day
             ).map((event) => (
               <div className="event-wrapper" key={event.id}>
                 <li className="event-item">{event.title}</li>

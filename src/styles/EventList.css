@@ -5,10 +5,8 @@
 
 .event-list-header {
   margin: 10% 0 5% 0;
-  font-size: 400;
   font-weight: 500;
   color: #252525;
-
 }
 
 .event-list {
@@ -27,3 +25,11 @@
   margin: 2% 0;
 }
 
+@media only screen and (min-width: 2000px) {
+  .event-list-header {
+    font-size: 1.8rem;
+  }
+  .event-item {
+    font-size: 1.2rem;
+  }
+}

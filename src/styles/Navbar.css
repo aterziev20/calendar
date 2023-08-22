@@ -1,5 +1,3 @@
-/* Navbar.css */
-
 .navbar {
   display: flex;
   align-items: center;
@@ -61,4 +59,18 @@
 .prev-button:focus,
 .next-button:focus {
   background-color: #e5e5e5;
+}
+
+@media only screen and (min-width: 2000px) {
+  .navbar h2 {
+    font-size: 1.8rem;
+  }
+
+  .today-button {
+    scale: 1.2;
+  }
+  .prev-button,
+  .next-button {
+    scale: 1.2;
+  }
 }

@@ -28,7 +28,6 @@
 .day {
   display: flex;
   flex-direction: column;
-  align-items: left;
   width: calc(90% / 7);
   height: 14vh;
   border: 1px solid #f1f1f3;
@@ -103,4 +102,27 @@
   background-color: #d2e3fc;
   border-radius: 50%;
   padding: 3% 3% 2% 3%;
+}
+
+@media only screen and (min-width: 2000px) {
+  .weekday {
+    font-size: 1.3rem;
+  }
+
+  .day-number {
+    scale: 1.2;
+  }
+
+  .first-day-of-month {
+    font-size: 1rem;
+  }
+
+  .event-container {
+    margin-top: 2%;
+  }
+
+  .event-title {
+    font-size: 0.9rem;
+  }
+
 }
