@@ -1,0 +1,106 @@
+.calendar-container {
+  font-family: Roboto, Arial, sans-serif;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+}
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 5%;
+}
+
+.weekday {
+  flex-basis: calc(90% / 7);
+  text-align: center;
+  padding: 1% 0;
+  border: 1px solid #f1f1f3;
+  border-bottom: none;
+  border-top: none;
+  font-weight: 200;
+}
+
+.week {
+  display: flex;
+  width: 100%;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: calc(90% / 7);
+  height: 14vh;
+  border: 1px solid #f1f1f3;
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.day-number {
+  font-size: 0.8rem;
+  text-align: center;
+  margin: 5% 0 0 3%;
+  flex: 1;
+  max-height: 15px;
+  max-width: 15px;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 50%;
+  padding: 3% 3% 2% 3%;
+}
+
+.day-number:hover {
+  background-color: #f1f1f1;
+}
+
+.first-day-of-month {
+  font-size: 0.8rem;
+  margin: 5% 0 0 3%;
+  flex: 1;
+  font-weight: bold;
+}
+
+.event-container {
+  flex: 2;
+  font-size: 0.7rem;
+  width: 85%;
+}
+
+.event-title {
+  margin: 0;
+  width: 100%;
+  background-color: #1a73e8;
+  padding: 2% 5%;
+  margin: 2% 0 0 2%;
+  border-radius: 5px;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+}
+
+.previous-month,
+.next-month {
+  color: #cbcbcb;
+}
+
+.current-month {
+  color: #5f6368;
+}
+
+.current-date .day-number {
+  color: #fff;
+  background-color: #1a73e8;
+  border-radius: 50%;
+  padding: 3% 3% 2% 3%;
+}
+
+.clicked-date .day-number.current-month {
+  color: #2866c1;
+  background-color: #d2e3fc;
+  border-radius: 50%;
+  padding: 3% 3% 2% 3%;
+}

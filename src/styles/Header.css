@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  align-items: center;
+  color: #5f6368;
+  border-bottom: 1px solid #dee0e3;
+  padding: 1% 5%;
+}
+
+.navbar-container {
+  margin-left: 5%;
+}
+
+.logo {
+  width: 100px;
+}

@@ -1,0 +1,116 @@
+[
+  {
+    "id": 1,
+    "date": "2023-07-10",
+    "time": "12:00-14:00",
+    "title": "Summer Picnic"
+  },
+  {
+    "id": 2,
+    "date": "2023-07-18",
+    "time": "15:30-17:00",
+    "title": "Book Club Meeting"
+  },
+  {
+    "id": 3,
+    "date": "2023-07-25",
+    "time": "20:00-22:00",
+    "title": "Outdoor Movie Night"
+  },
+  {
+    "id": 4,
+    "date": "2023-07-30",
+    "time": "09:00-13:00",
+    "title": "Hiking Adventure"
+  },
+  {
+    "id": 5,
+    "date": "2023-07-31",
+    "time": "14:00-16:00",
+    "title": "Ice Cream Social"
+  },
+  {
+    "id": 6,
+    "date": "2023-08-01",
+    "time": "08:00-09:30",
+    "title": "Basketball"
+  },
+  {
+    "id": 7,
+    "date": "2023-08-01",
+    "time": "10:30-11:00",
+    "title": "Team Meeting"
+  },
+  {
+    "id": 8,
+    "date": "2023-08-01",
+    "time": "19:00-21:00",
+    "title": "Family Dinner"
+  },
+  {
+    "id": 9,
+    "date": "2023-08-03",
+    "time": "19:00-21:00",
+    "title": "Beach Bonfire"
+  },
+  {
+    "id": 10,
+    "date": "2023-08-15",
+    "time": "10:30-12:00",
+    "title": "Massage"
+  },
+  {
+    "id": 11,
+    "date": "2023-08-22",
+    "time": "17:30-19:00",
+    "title": "Birthday Party"
+  },
+  {
+    "id": 12,
+    "date": "2023-08-28",
+    "time": "18:00-20:00",
+    "title": "Art Exhibition Opening"
+  },
+  {
+    "id": 13,
+    "date": "2023-08-30",
+    "time": "16:00-18:00",
+    "title": "Cooking Class"
+  },
+  {
+    "id": 14,
+    "date": "2023-08-31",
+    "time": "20:30-22:30",
+    "title": "Beach Bonfire"
+  },
+  {
+    "id": 15,
+    "date": "2023-09-05",
+    "time": "12:00-14:00",
+    "title": "Family BBQ"
+  },
+  {
+    "id": 16,
+    "date": "2023-09-12",
+    "time": "17:30-23:30",
+    "title": "Birthday Party"
+  },
+  {
+    "id": 17,
+    "date": "2023-09-18",
+    "time": "14:00-18:00",
+    "title": "Music Festival"
+  },
+  {
+    "id": 18,
+    "date": "2023-09-22",
+    "time": "16:00-17:30",
+    "title": "First Day of Fall"
+  },
+  {
+    "id": 19,
+    "date": "2023-09-29",
+    "time": "10:00-13:00",
+    "title": "Nature Photography Workshop"
+  }
+]

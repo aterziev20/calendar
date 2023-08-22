@@ -1,0 +1,64 @@
+/* Navbar.css */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.nav-buttons {
+  display: flex;
+  margin: 0 10%;
+  gap: 10%;
+}
+
+.navbar h2 {
+  margin: 0;
+  font-weight: 200;
+  width: 500px;
+}
+
+.today-button {
+  color: #5f6368;
+  padding: 1.5% 2%;
+  background-color: transparent;
+  border: 1px solid #f1f1f3;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.today-button:hover {
+  background-color: #fafafa;
+}
+
+.prev-button,
+.next-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #5f6368;
+  font-size: 1.3rem;
+  background: none;
+  border: transparent;
+  border-radius: 50%;
+}
+
+.next-button {
+  padding: 8% 8% 8% 12%;
+}
+
+.prev-button {
+  padding: 8% 12% 8% 8%;
+}
+
+.prev-button:hover,
+.next-button:hover {
+  background-color: #fafafa;
+}
+
+.prev-button:focus,
+.next-button:focus {
+  background-color: #e5e5e5;
+}
