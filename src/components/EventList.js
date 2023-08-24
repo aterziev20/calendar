@@ -12,7 +12,7 @@ function EventList({ selectedDate, getEventsForDay }) {
       {selectedDate ? (
         <div>
           <h2 className="event-list-header">
-            Events for {formatDate(selectedDate)}
+            Events {formatDate(selectedDate)}
           </h2>
           <ul className="event-list">
             {getEventsForDay(
@@ -22,7 +22,7 @@ function EventList({ selectedDate, getEventsForDay }) {
             ).map((event) => (
               <div className="event-wrapper" key={event.id}>
                 <li className="event-item">{event.title}</li>
-                <li className="event-item">{event.time}</li>
+                <li className="event-time">{event.time}</li>
               </div>
             ))}
           </ul>

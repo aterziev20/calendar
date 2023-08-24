@@ -111,7 +111,13 @@ function MonthCalendar({ year, month, events }) {
                     </div>
                   )}
                 </div>
-                <div className="event-container">
+                <div
+                  className={`event-container ${
+                    getEventsForDay(year, month, day).length > 0
+                      ? "event-slim"
+                      : ""
+                  }`}
+                >
                   {className === "current-month" && (
                     <div>
                       {getEventsForDay(year, month, day).map((event) => (

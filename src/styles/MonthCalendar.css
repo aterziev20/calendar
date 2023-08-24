@@ -29,7 +29,7 @@
   display: flex;
   flex-direction: column;
   width: calc(90% / 7);
-  height: 14vh;
+  height: calc(83.5vh / 6);
   border: 1px solid #f1f1f3;
 }
 
@@ -124,5 +124,62 @@
   .event-title {
     font-size: 0.9rem;
   }
+}
 
+@media only screen and (max-width: 481px) {
+  .calendar-container {
+    margin-top: 6vh;
+  }
+
+  .calendar {
+    margin-left: 0%;
+  }
+
+  .weekday {
+    flex-basis: calc(97% / 7);
+    font-size: 0.8rem;
+  }
+
+  .week {
+    display: flex;
+    width: 100%;
+  }
+
+  .day {
+    display: flex;
+    flex-direction: column;
+    width: calc(97% / 7);
+    height: calc(30vh / 6);
+    border: 1px solid #f1f1f3;
+  }
+
+  .day-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .day-number {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 5% 0 0 3%;
+    flex: 1;
+    max-height: 15px;
+    max-width: 15px;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 50%;
+    padding: 3% 3% 2% 3%;
+  }
+
+  .event-slim {
+    background-color: #1a73e8;
+    border-radius: 5px;
+    max-height: 5px;
+    margin: 5px 0 0 5%;
+    width: 90%;
+  }
+  .event-title {
+    display: none;
+  }
 }

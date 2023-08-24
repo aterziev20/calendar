@@ -19,7 +19,8 @@
   display: flex;
 }
 
-.event-item {
+.event-item,
+.event-time {
   color: #252525;
   width: 100%;
   margin: 2% 0;
@@ -29,7 +30,32 @@
   .event-list-header {
     font-size: 1.8rem;
   }
-  .event-item {
+  .event-item,
+  .event-timeФ {
     font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 481px) {
+  .event-list-container {
+    grid-row: 2;
+    width: 80%;
+  }
+
+  .event-list-header {
+    font-size: 1rem;
+  }
+
+  .event-wrapper {
+    display: block;
+    border-bottom: 1px solid #dee0e3;
+  }
+
+  .event-item {
+    font-size: 0.8rem;
+  }
+  .event-time {
+    font-size: 0.7rem;
+    color: #6f7377;
   }
 }

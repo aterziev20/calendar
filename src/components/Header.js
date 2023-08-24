@@ -7,7 +7,9 @@ function Header() {
   return (
     <div className="header">
       <div className="logo">
-        <img src="/calendar-logo.png" alt="" className="logo"></img>
+        <a href="/">
+          <img src="/calendar-logo.png" alt="" className="logo"></img>
+        </a>
       </div>
       <div className="navbar-container">
         <Navbar />
