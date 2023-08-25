@@ -31,6 +31,7 @@
   width: calc(90% / 7);
   height: calc(83.5vh / 6);
   border: 1px solid #f1f1f3;
+  cursor: pointer;
 }
 
 .day-header {
@@ -46,7 +47,6 @@
   flex: 1;
   max-height: 15px;
   max-width: 15px;
-  cursor: pointer;
   background-color: transparent;
   border-radius: 50%;
   padding: 3% 3% 2% 3%;
@@ -84,6 +84,8 @@
 .previous-month,
 .next-month {
   color: #cbcbcb;
+  pointer-events: none;
+  cursor: default;
 }
 
 .current-month {

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { weekdayNames, shortMonthNames } from "./monthNames";
 import EventList from "./EventList";
+import { useSelector } from "react-redux";
 
 import "../styles/MonthCalendar.css";
 
-function MonthCalendar({ year, month, events }) {
+function MonthCalendar({ year, month }) {
   const currentDate = new Date();
   const currentYear = currentDate.getFullYear();
   const currentMonth = currentDate.getMonth() + 1;
@@ -13,14 +14,15 @@ function MonthCalendar({ year, month, events }) {
   const firstDayOfMonth = new Date(year, month - 1, 1).getDay();
   const daysInMonth = new Date(year, month, 0).getDate();
   const lastDayOfPreviousMonth = new Date(year, month - 1, 0).getDate();
-
-  const [selectedDate, setSelectedDate] = useState(null);
-
+  const allEvents = useSelector((state) => state.event.events); // Hook to get the events from Redux state
   const formatDate = (year, month, day) => {
     return `${year}-${month.toString().padStart(2, "0")}-${day
       .toString()
       .padStart(2, "0")}`;
   };
+  const [selectedDate, setSelectedDate] = useState(
+    formatDate(currentYear, currentMonth, currentDay)
+  );
 
   function handleDateClick(year, month, day) {
     setSelectedDate(formatDate(year, month, day));
@@ -66,7 +68,11 @@ function MonthCalendar({ year, month, events }) {
 
   function getEventsForDay(year, month, day) {
     const formattedDate = formatDate(year, month, day);
-    return events.filter((event) => event.date === formattedDate);
+    const eventsForDay = allEvents.filter((e) => e.date === formattedDate);
+
+    return eventsForDay
+      .sort((a, b) => a.time.localeCompare(b.time))
+      .slice(0, 3); // Only return the first 3 events
   }
 
   return (
@@ -91,17 +97,13 @@ function MonthCalendar({ year, month, events }) {
                     ? "clicked-date"
                     : ""
                 }`}
+                onClick={() => handleDateClick(year, month, day)}
               >
                 <div className="day-header">
                   <h2
                     className={`day-number ${
                       className === "current-month" ? "current-month" : ""
                     }`}
-                    onClick={() => {
-                      if (className === "current-month") {
-                        handleDateClick(year, month, day);
-                      }
-                    }}
                   >
                     {day}
                   </h2>
@@ -118,11 +120,12 @@ function MonthCalendar({ year, month, events }) {
                       : ""
                   }`}
                 >
-                  {className === "current-month" && (
+                  {(className === "current-month" ||
+                    className === "current-date") && (
                     <div>
-                      {getEventsForDay(year, month, day).map((event) => (
-                        <div key={event.id} className="event">
-                          <p className="event-title">{event.title}</p>
+                      {getEventsForDay(year, month, day).map((e) => (
+                        <div key={e.id} className="event">
+                          <p className="event-title">{e.title}</p>
                         </div>
                       ))}
                     </div>

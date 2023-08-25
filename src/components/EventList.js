@@ -1,37 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
+import { addEvent, removeEvent } from "../redux";
+import { useSelector, useDispatch } from "react-redux";
+import { IoTrashOutline } from "react-icons/io5";
+
+import EventModal from "./EventModal";
 
 import "../styles/EventList.css";
 
-function EventList({ selectedDate, getEventsForDay }) {
+function EventList({ selectedDate }) {
   const formatDate = (date) => {
     const [year, month, day] = date.split("-");
     return `${day}.${month}.${year}`;
   };
+
+  const dispatch = useDispatch();
+  const eventsArray = useSelector((state) => state.event.events);
+
+  const eventsForSelectedDate = eventsArray
+    .filter((event) => event.date === selectedDate)
+    .sort((a, b) => {
+      const startTimeA = a.time.split(" - ")[0];
+      const startTimeB = b.time.split(" - ")[0];
+      return startTimeA.localeCompare(startTimeB);
+    });
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleRemoveEvent = (eventId) => {
+    dispatch(removeEvent(eventId));
+  };
+
   return (
     <div className="event-list-container">
-      {selectedDate ? (
-        <div>
-          <h2 className="event-list-header">
-            Events {formatDate(selectedDate)}
-          </h2>
-          <ul className="event-list">
-            {getEventsForDay(
-              parseInt(selectedDate.substr(0, 4)), // 4 digit year
-              parseInt(selectedDate.substr(5, 2)), // 2 digit month
-              parseInt(selectedDate.substr(8, 2))  // 2 digit day
-            ).map((event) => (
-              <div className="event-wrapper" key={event.id}>
+      <div>
+        <h2 className="event-list-header">Events {formatDate(selectedDate)}</h2>
+        <button className="add-event-button" onClick={openModal}>
+          Create Event
+        </button>
+        <EventModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          selectedDate={selectedDate}
+          addEvent={addEvent} // Pass the action to add event here
+        />
+        <ul className="event-list">
+          {eventsForSelectedDate.map((event) => (
+            <div className="event-item-wrapper" key={event.id}>
+              <div className="event-item-container">
                 <li className="event-item">{event.title}</li>
                 <li className="event-time">{event.time}</li>
               </div>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <div>
-          <h2 className="event-list-header">Events</h2>
-        </div>
-      )}
+              <div
+                className="remove-event-button"
+                onClick={() => handleRemoveEvent(event.id)}
+              >
+                <IoTrashOutline />
+              </div>
+            </div>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

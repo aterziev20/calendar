@@ -9,21 +9,48 @@
   color: #252525;
 }
 
+.add-event-button {
+  color: #252525;
+  background-color: #fff;
+  border: 1px solid #6f7377;
+  border-radius: 20px;
+  padding: 5% 10%;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin: 5% 0;
+}
+.add-event-button:hover {
+  box-shadow: -2px 4px 8px 2px rgba(0, 0, 0, 0.2);
+  background-color: #f1f4fe;
+}
+
+.event-item-wrapper {
+  display: flex;
+}
+
+.event-item-container {
+  flex: 2;
+}
+
+.remove-event-button {
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  padding: 9% 0 0 0;
+}
+
 .event-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.event-wrapper {
-  display: flex;
-}
-
 .event-item,
 .event-time {
   color: #252525;
   width: 100%;
-  margin: 2% 0;
+  margin: 5% 0;
 }
 
 @media only screen and (min-width: 2000px) {
@@ -34,6 +61,9 @@
   .event-timeФ {
     font-size: 1.2rem;
   }
+  .remove-event-button {
+    font-size: 1.5rem;
+  }
 }
 
 @media only screen and (max-width: 481px) {
@@ -41,14 +71,30 @@
     grid-row: 2;
     width: 80%;
   }
-
   .event-list-header {
     font-size: 1rem;
+    margin: 5% 0 2% 0;
   }
 
-  .event-wrapper {
-    display: block;
+  .add-event-button {
+    padding: 2.5% 5%;
+    margin: 2% 0;
+  }
+
+  .event-item-wrapper {
+    display: flex;
     border-bottom: 1px solid #dee0e3;
+  }
+
+  .event-item-container {
+    flex: 2;
+  }
+
+  .remove-event-button {
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-align: center;
+    padding: 7% 0 0 0;
   }
 
   .event-item {
