@@ -115,6 +115,8 @@ function MonthCalendar({ year, month }) {
                 </div>
                 <div
                   className={`event-container ${
+                    (className === "current-month" ||
+                      className === "current-date") &&
                     getEventsForDay(year, month, day).length > 0
                       ? "event-slim"
                       : ""
