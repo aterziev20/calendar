@@ -16,13 +16,20 @@ function EventList({ selectedDate }) {
   const dispatch = useDispatch();
   const eventsArray = useSelector((state) => state.event.events);
 
-  const eventsForSelectedDate = eventsArray
+  /* const eventsForSelectedDate = eventsArray
     .filter((event) => event.date === selectedDate)
     .sort((a, b) => {
       const startTimeA = a.time.split(" - ")[0];
       const startTimeB = b.time.split(" - ")[0];
       return startTimeA.localeCompare(startTimeB);
-    });
+      
+    }); */ // sorts the events by starting time
+
+  // sorts the events by starting time better easier method
+  const eventsForSelectedDate = eventsArray
+    .filter((event) => event.date === selectedDate)
+    .sort((a, b) => a.time.localeCompare(b.time));
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
