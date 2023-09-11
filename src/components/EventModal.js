@@ -16,6 +16,12 @@ function EventModal({ isOpen, onClose, selectedDate }) {
     return null; // Don't render the modal if it's not open
   }
 
+  const resetForm = () => {
+    setTitle("");
+    setStartTime("");
+    setEndTime("");
+  };
+
   const handleAddEvent = (e) => {
     e.preventDefault();
     const eventPayload = {
@@ -26,6 +32,12 @@ function EventModal({ isOpen, onClose, selectedDate }) {
     };
     dispatch(addEvent(eventPayload)); // Pass the eventPayload
     onClose();
+    resetForm();
+  };
+
+  const handleCancel = () => {
+    onClose();
+    resetForm(); // Clear form fields when Cancel button is clicked
   };
 
   return (
@@ -55,7 +67,7 @@ function EventModal({ isOpen, onClose, selectedDate }) {
             onChange={(e) => setEndTime(e.target.value)}
           />
           <div className="form-button-container">
-            <button className="form-button" onClick={onClose}>
+            <button className="form-button" onClick={handleCancel}>
               Cancel
             </button>
             <button className="form-button" type="submit">
