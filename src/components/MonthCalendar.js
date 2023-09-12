@@ -11,7 +11,7 @@ function MonthCalendar({ year, month }) {
   const currentMonth = currentDate.getMonth() + 1;
   const currentDay = currentDate.getDate();
 
-  const firstDayOfMonth = new Date(year, month - 1, 1).getDay();
+  const firstDayOfMonth = new Date(year, month - 1, 0).getDay();
   const daysInMonth = new Date(year, month, 0).getDate();
   const lastDayOfPreviousMonth = new Date(year, month - 1, 0).getDate();
   const allEvents = useSelector((state) => state.event.events); // Hook to get the events from Redux state
